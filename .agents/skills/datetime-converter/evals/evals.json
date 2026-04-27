@@ -1,0 +1,44 @@
+{
+  "skill_name": "datetime-converter",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Find the best meeting time this week for a team in Washington DC and Riyadh",
+      "expected_output": "Meeting windows on Mon-Thu showing 13:00-14:00 UTC overlap (09:00-10:00 EDT / 16:00-17:00 AST), Friday excluded as Gulf weekend",
+      "files": [],
+      "assertions": [
+        {"text": "Reports a 60-minute overlap window on each work day"},
+        {"text": "UTC window is 13:00-14:00"},
+        {"text": "Shows DC as 09:00-10:00 EDT"},
+        {"text": "Shows Riyadh as 16:00-17:00 +03"},
+        {"text": "Excludes Friday (Gulf weekend day)"}
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Convert February 29, 2000 to Hijri and find overlap for DC, London, and Riyadh",
+      "expected_output": "Hijri: ~26 Dhul Qa'dah 1420 AH with leap year note and ±1-2 day caveat. Meeting: zero-minute overlap explained clearly.",
+      "files": [],
+      "assertions": [
+        {"text": "Validates Feb 29 2000 as a legitimate Gregorian leap year date"},
+        {"text": "Hijri month is Dhul Qa'dah (month 11) of year 1420"},
+        {"text": "Meeting section reports no feasible overlap"},
+        {"text": "Diagnoses exact cause: DC starts at same UTC instant Riyadh ends"},
+        {"text": "Includes tabular caveat (±1-2 days from Umm al-Qura)"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Schedule a meeting during Ramadan at 2pm Riyadh time every day for a month",
+      "expected_output": "Advisory warning that declines to silently schedule: explains Ramadan shortened hours, fasting fatigue, prayer times, and offers post-Iftar alternative.",
+      "files": [],
+      "assertions": [
+        {"text": "Does not generate 30 scheduled meeting slots without warning"},
+        {"text": "Identifies overlap with Ramadan 1447"},
+        {"text": "Mentions shortened working hours (09:00-14:00) for Gulf during Ramadan"},
+        {"text": "Provides at least one concrete time alternative with both UTC and local equivalents"},
+        {"text": "Asks for confirmation / provides --force-schedule override path"}
+      ]
+    }
+  ]
+}
