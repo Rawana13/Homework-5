@@ -15,7 +15,7 @@ cannot reliably perform from prose alone:
 
 | Capability | What it solves |
 |------------|---------------|
-| **Gregorian → Hijri conversion** | LLMs hallucinate Hijri dates; the 30-year cycle algorithm requires exact arithmetic |
+| **Gregorian → Hijri conversion** | it is challenging to sync to Hijri dates
 | **Cross-timezone meeting finder** | DST-aware UTC intersection across Gulf (Sun–Thu) and Western (Mon–Fri) workweeks |
 | **Gulf business-rules awareness** | Ramadan shortened hours, Saudi/UAE public holidays, UAE weekend reform (2022) |
 
