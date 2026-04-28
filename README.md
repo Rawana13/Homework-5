@@ -238,3 +238,4 @@ hw5-rawan/
 │               └── gulf-holidays.md     ← Saudi/UAE holidays, Ramadan hours, weekend rules
 └── README.md                            ← This file
 ```
+## Video: https://canva.link/h06iardri9cfnpd
